@@ -12,32 +12,15 @@
 
 /dts-v1/;
 
-#include "imx6q.dtsi"
+#include "imx6dl.dtsi"
 #include "imx6qdl-milan85board.dtsi"
 
 / {
-	model = "Freescale i.MX6 Quad SABRE Smart Device Board";
-	compatible = "fsl,imx6q-sabresd", "fsl,imx6q";
+	model = "Freescale i.MX6 Solo milan85board";
+	compatible = "fsl,imx6s-milan85board", "fsl,imx6dl";
 
 	memory {
-		reg = <0x10000000 0x80000000>;
-	};
-
-};
-
-&battery {
-	offset-charger = <1900>;
-	offset-discharger = <1694>;
-	offset-usb-charger = <1685>;
-};
-
-&ldb {
-	lvds-channel@0 {
-		crtc = "ipu2-di0";
-	};
-
-	lvds-channel@1 {
-		crtc = "ipu2-di1";
+		reg = <0x10000000 0x40000000>;
 	};
 };
 
@@ -49,14 +32,4 @@
 	status = "okay";
 };
 
-&mxcfb3 {
-	status = "okay";
-};
 
-&mxcfb4 {
-	status = "okay";
-};
-
-&sata {
-	status = "okay";
-};
